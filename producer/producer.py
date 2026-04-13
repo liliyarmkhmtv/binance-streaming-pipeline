@@ -28,7 +28,7 @@ async def produce_message(p, topic, value):
 
 async def run_streams():
     connection = None
-    p = AIOProducer({"bootstrap.servers": os.getenv("KAFKA_BOOTSTRAP_SERVERS", "broker:9092")})
+    p = AIOProducer({"bootstrap.servers": os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:29092")})
 
     try:
         connection = await client.websocket_streams.create_connection()
